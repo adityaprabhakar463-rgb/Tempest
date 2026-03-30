@@ -1,0 +1,20 @@
+Create weather.html + weather.js
+
+The page shows:
+- A search bar — user types a city name
+- Current weather for that city:
+  - City name and country
+  - Temperature (°C)
+  - Weather description (e.g. "clear sky")
+  - Humidity and wind speed
+  - A weather icon
+- A loading state while fetching
+- Error handling:
+  - City not found
+  - Network failure
+- Last searched city saved to localStorage
+  - Loads automatically on next visit
+
+API: OpenWeatherMap — free tier, no credit card
+URL: https://api.openweathermap.org/data/2.5/weather
+     ?q={city}&appid={your_key}&units=metric

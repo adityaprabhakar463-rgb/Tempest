@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stunning Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="weather.css">
+</head>
+
+<body>
+    <div class="mesh-background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    
+    <div id="weather-effects"></div>
+
+    <header class="header-glass">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">⛅</span>
+                <h1 class="logo-text">TEMPEST</h1>
+            </div>
+            <div class="actions-wrapper">
+                <div class="search-wrapper">
+                    <input type="text" id="city-input" placeholder="Enter city name..." autocomplete="off">
+                    <button id="search-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                    <button id="save-city-btn" title="Save City">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="favorites-container">
+                    <button id="favorites-btn" class="icon-btn" title="Favorites">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                    </button>
+                    <div id="favorites-dropdown" class="favorites-dropdown">
+                        <div class="dropdown-header">Saved Cities</div>
+                        <div id="dropdown-list" class="dropdown-list"></div>
+                    </div>
+                </div>
+                <div class="unit-toggle">
+                    <button id="unit-c" class="unit-btn active">°C</button>
+                    <button id="unit-f" class="unit-btn">°F</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <div id="weather-card" class="glass-card" style="display: none;">
+            <div class="weather-header">
+                <h2 id="city-name" class="city-name text-gradient"></h2>
+            </div>
+
+            <div class="weather-body">
+                <div class="weather-icon-container">
+                    <img id="weather-icon" src="" alt="Weather Icon" class="floating">
+                </div>
+                <div class="weather-temp-container">
+                    <div id="temperature" class="temperature"></div>
+                    <div id="weather-description" class="weather-desc"></div>
+                </div>
+            </div>
+
+            <div id="details-row" class="details-grid">
+                <div class="detail-chip abstract-glass" id="humidity"></div>
+                <div class="detail-chip abstract-glass" id="feels-like"></div>
+                <div class="detail-chip abstract-glass" id="wind-speed"></div>
+            </div>
+
+            <div class="forecast-container" id="forecast-container">
+                <h3 class="forecast-title">3-Day Forecast</h3>
+                <div class="forecast-grid" id="forecast-grid"></div>
+            </div>
+        </div>
+
+        <div id="error-message" class="glass-alert" style="display: none;"></div>
+        <div id="loading-indicator" class="glass-loader" style="display: none;">
+            <div class="spinner"></div>
+            <p>Gathering weather data...</p>
+        </div>
+    </main>
+
+    <script src="weather.js"></script>
+</body>
+
+</html>
